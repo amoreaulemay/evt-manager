@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A TypeScript utility class for efficient management of event listeners in web applications.",
   "main": "dist/index.js",
   "targets": {
@@ -20,7 +20,11 @@
     "build": "parcel build && ./post-build.sh",
     "prepare": "pnpm build"
   },
-  "keywords": ["Explicit Resource Management", "ESNext", "TypeScript"],
+  "keywords": [
+    "Explicit Resource Management",
+    "ESNext",
+    "TypeScript"
+  ],
   "author": "Alexandre Moreau-Lemay",
   "license": "MIT",
   "dependencies": {
