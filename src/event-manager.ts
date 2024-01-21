@@ -17,7 +17,7 @@ type EarlyEventDispose = () => void;
 type EventName = string;
 
 /**
- * EventManagerV2 is a utility class that provides methods for managing event listeners.
+ * EventManager is a utility class that provides methods for managing event listeners.
  * It implements the Disposable interface, which provides a method to release resources held by an object.
  * The class maintains a map of event targets and their associated event listeners.
  * Each event listener is associated with a unique symbol and can be disposed individually or all at once.
@@ -48,7 +48,7 @@ type EventName = string;
  *   }
  * }
  */
-export class EventManagerV2 implements Disposable {
+export class EventManager implements Disposable {
   #disposed = false;
   #events: Map<EventTarget, [DisposableStack, Map<symbol, EarlyEventDispose>]> = new Map();
 
@@ -95,13 +95,13 @@ export class EventManagerV2 implements Disposable {
 
     target.addEventListener(eventName, callback, options);
     stack.defer(() => {
-      console.debug('EventManagerV2 disposing event listener:', target, eventName, callback);
+      console.debug('EventManager disposing event listener:', target, eventName, callback);
       this.#callbackDispose(target, eventName, callback);
     });
 
     const symbol = Symbol();
     earlyDisposeMap.set(symbol, () => {
-      console.debug('EventManagerV2 disposing early event listener:', target, eventName, callback);
+      console.debug('EventManager disposing early event listener:', target, eventName, callback);
 
       this.#callbackDispose(target, eventName, callback);
 

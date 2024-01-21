@@ -1,1 +1,1 @@
-export { EventManagerV2 } from "./event-manager.js";
+export { EventManager } from "./event-manager.js";
