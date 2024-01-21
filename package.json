@@ -1,5 +1,8 @@
 {
   "name": "@airfair/event-manager",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "1.0.0",
   "description": "A TypeScript utility class for efficient management of event listeners in web applications.",
   "main": "dist/index.js",
