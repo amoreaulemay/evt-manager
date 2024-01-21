@@ -2,18 +2,37 @@
   "name": "evt-manager",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "targets": {
+    "main": {
+      "includeNodeModules": true
+    }
+  },
+  "source": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "browserslist": "> 0.5%, not dead",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "parcel watch",
+    "build": "parcel build && ./post-build.sh"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Alexandre Moreau-Lemay",
+  "license": "MIT",
   "dependencies": {
-    "disposablestack": "^1.1.2"
+    "core-js": "3.35.1",
+    "tslib": "^2.6.2"
   },
   "devDependencies": {
-    "esbuild": "^0.19.11",
+    "@babel/cli": "^7.23.4",
+    "@babel/core": "^7.23.7",
+    "@babel/plugin-proposal-explicit-resource-management": "^7.23.3",
+    "@babel/preset-env": "^7.23.8",
+    "@babel/preset-typescript": "^7.23.3",
+    "@parcel/babel-preset-env": "^2.11.0",
+    "@parcel/packager-ts": "2.11.0",
+    "@parcel/transformer-typescript-types": "2.11.0",
+    "@types/core-js": "^2.5.8",
+    "parcel": "^2.11.0",
     "typescript": "^5.3.3"
   }
 }

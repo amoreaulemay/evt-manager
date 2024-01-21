@@ -1,0 +1,12 @@
+{
+  "presets": [
+    [
+      "@parcel/babel-preset-env",
+      {
+        "useBuiltIns": "entry",
+        "corejs": "3.35.1"
+      }
+    ]
+  ],
+  "plugins": ["@babel/plugin-proposal-explicit-resource-management"]
+}
